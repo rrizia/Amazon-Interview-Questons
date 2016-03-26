@@ -1,0 +1,23 @@
+Use cases:
+1. User Registration
+2. User PhotoAlbums
+
+
+User, UserManager, PhotoAlbum, ManageAlbum, Photo
+
+class User{
+  int id;
+  String name;
+  //.....
+}
+
+class UserManager{
+  Map<id, User> registeredUser;
+  addUser();
+  editUser();
+  deleteUser();
+}
+
+class PhotoAlbum{
+
+}
