@@ -1,0 +1,23 @@
+http://cs.stackexchange.com/questions/48668/find-minimum-number-of-paltforms
+
+Given the arrival and departure time of various trains in a station. 
+Calculate the minimum number of platforms required such that no train has to wait for another train to vacate the platform. 
+The question basically means calculate the maximum number of trains that would be present in the platform at any given time.
+
+
+sort the arrival time and sort the departure time, keep a count initialized to 0. 
+compare the first element of the arrival time with the first of departure, 
+increase the value of count if the value at current Index at arrival is less than the value index at departure and 
+increment the arrival index, and vice versa. 
+Keep the maximum count that you see.
+
+
+This actually suggests a way to restate the algorithm you describe. 
+Sort all events according to time. Now go over them in order of increasing time (we assume for simplicity that all times are distinct). 
+Keep a counter of the number of trains in station. 
+When processing an arrival event, increase the counter; when processing a departure event, decrease the counter. 
+Keep track of the maximal value of the counter.
+
+The algorithm you describe instead sorts the arrival and departure times separately, 
+and then performs an online merge (same algorithm as in merge sort for merging two sorted lists). 
+I don't know why they described the algorithm this way rather than the way I described it.
