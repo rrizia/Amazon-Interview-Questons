@@ -3,3 +3,72 @@ https://github.com/joeblau/sample-elevator-control-system
 
 
 http://massivetechinterview.blogspot.com/2015/07/thought-works-object-oriented-design.html
+
+Use Cases:
+
+1. Users press button from inside
+2. Users press button from outside
+
+Elevator - serves the purpose of carrying people
+ElevatorController - manages elevator requests
+
+public enum ElevatorDirection {
+  ELEVATOR_UP,      // Elevator is going up
+  ELEVATOR_DOWN,    // Elevator is going down
+  ELEVATOR_HOLD     // Elevator is being held
+}
+
+public enum ElevatorStatus {
+  ELEVATOR_OCCUPIED,  // Elevator is occupied by users inside who are request floors
+  ELEVATOR_EMPTY      // Elevator is empty and can be used to request a pickup
+}
+
+public class Elevator{
+  int id;
+  ElevatorDirection
+  ElevatorStatus
+}
+
+public class ElevatorRequest{
+  LinkedList<Elevator> free;
+  LinkedList<Elevator> moving;
+  PriorityQueue<Integer> requests;
+  
+  processRequest(){
+  }
+}
+
+public class ElevatorController{
+    Map<Integer, Button> buttons;
+    ElevatorRequest requst;
+    
+    public boolean turnButtonOn(int id){
+    }
+    
+    public boolean turnButtonOff(int id){
+    }
+    
+    public void processElevatorRequest(Button bt){
+    
+    }
+}
+
+public class Button{
+  ButtonStatus status;
+  int buttonId;
+}
+
+public class InnerButton{
+  int elevatorId;
+  String floorNo;
+  
+}
+
+public class OuterButton{
+  int floorId;
+  String destinationId;
+}
+
+public enum ButtonStatus{
+  ON, OFF
+}
