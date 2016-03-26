@@ -1,0 +1,54 @@
+There can be five tables in database:
+
+CATEGORY this table stores information about products categories of your store and categories hierarchy.
+parent field of this table stores ID of the parent category.
+
+PRODUCT all products of your store are stored in this table. This table has a foreign key categoryID which identifies ID of the category to which a product belongs.
+
+ORDER this table stores information about all orders made by visitors of your store.
+
+ORDERED_SHOPPING_CART table is tightly connected with PRODUCT and ORDER tables; stores information on customers' orders content.
+
+SPECIAL_OFFER table contains a list of products, which are shown on home page as special offers
+
+
+//from career cup
+
+ShoppingCart
+	List<ItemOrder> items;
+	add(ItemOrder)
+	remove(ItemOrder)
+	applyCoupan(Coupan)
+	getTotal()	
+
+ItemOrder
+	Item item;
+	int quantity
+	double price;
+	getPrice()
+	getQuantity()
+	changeQuantity();
+
+Enum ItemTypes\ or Category
+
+Item
+	String name;
+	ItemTypes type;
+	double price;
+	String itemID;
+	getName()
+	getItemID();
+	getItemPrice();
+	
+	
+	
+	Nouns tend to be objects, verbs tend to be use cases or methods.
+
+Physical: photo (obvious!), display type, system, photo file, file format, user, date....
+Conceptual: add, delete, save/store, retrieve, sort, modify, view/display photo....
+
+Make connections between nouns and verbs. User Adds Photo. (Well - there's a use case!)
+
+I would also suggest looking at UML and Design Patterns and how they can be used in generic OOD. 
+(Notice - I didn't mention a language or a database anywhere above. Don't pick a language and then do your OOD.
+Do your OOD in a way that the design can be implemented by any OOL.
