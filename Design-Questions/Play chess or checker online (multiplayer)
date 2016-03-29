@@ -1,0 +1,60 @@
+You create a Server where the JavaScript code must be running the Checker application on one of the Servers. 
+And create a client separately with another javascript checker application. 
+Once you initiate the communication, you can keep the checkers activated on both sides and hence you initiate the play with 
+the Server and client playing along with each other. 
+If you want the Server game to be automated, you can pull up the scenarios and automate the resulting move to every move made by 
+the Client.
+
+//OOP of chess
+
+http://codereview.stackexchange.com/questions/71790/design-a-chess-game-using-object-oriented-principles
+
+Game - make it singleton class
+Board - describes the state of the game
+Player - Each will have color
+Piece  - abstract class with color (a piece is meaning less without the type)
+King extends Piece
+Queen extends Piece
+Bishop extends Piece
+Rook extends Piece
+Knight extends Piece
+
+public Game{
+  Board board;
+  Player[] players;
+  private static Game instance = null;
+  protected Game(){
+  }
+  
+  public static getInstance(){
+    if(instance == null){
+      instance = new Game();
+    }
+    return instance;
+  }
+}
+
+Board{
+  Piece[][] board;
+  initBoard(){
+  }
+}
+Player{
+  Color color
+  List<Piece> pieces;
+}
+
+Piece{
+  Color color
+  int x;
+  int y;
+  PieceState state;
+}
+
+public enum Color{
+  BLACK, WHITE
+}
+
+public enum PieceState{
+  ACTIVE, DEAD;
+}
